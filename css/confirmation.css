@@ -1,0 +1,169 @@
+/* ==========================================================================
+   PAGE: CONFIRMATION
+   ========================================================================== */
+
+.confirmation-outer {
+    background-color: #F9FAFB;
+    width: 100%;
+    padding: 80px 0 0 0;
+}
+
+.confirmation-wrapper {
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 270px;
+}
+
+.confirmation-section {
+    width: 100%;
+    height: 615px;
+    background: linear-gradient(180deg, #204CA0 0%, #3081EE 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.confirmation-content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation-title {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: clamp(20px, 3.5vw, 35px);
+}
+
+.confirmation-subtitle {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 2.2vw, 24px);
+    line-height: 1.4;
+    color: #FFFFFF;
+    margin-bottom: clamp(40px, 7vw, 82px);
+}
+
+.confirmation-btn {
+    background-color: #16C858;
+    width: clamp(250px, 26vw, 294.5px);
+    height: clamp(50px, 5.5vw, 58px);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.conf-btn-divider {
+    width: 1px;
+    height: 14px;
+    background-color: #FFFFFF;
+    margin: 0 clamp(8px, 1.5vw, 14px);
+}
+
+.confirmation-btn:hover {
+    background-color: #14b34f;
+    transform: translateY(-2px);
+}
+
+.confirmation-btn .btn-arrow {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Confirmation Alignment - Matches Site Footer Exactly */
+@media (min-width: 1201px) and (max-width: 1528px) {
+    .confirmation-wrapper {
+        padding: 0 54px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .confirmation-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 980px) {
+    .confirmation-wrapper {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .confirmation-outer {
+        padding: 40px 0 0 0;
+    }
+
+    .confirmation-wrapper {
+        padding: 0 24px;
+    }
+
+    .confirmation-section {
+        height: auto;
+        min-height: 500px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        border-radius: 4px;
+    }
+
+    .confirmation-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .confirmation-subtitle {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .confirmation-btn {
+        width: 100%;
+        max-width: 294.5px;
+        font-size: 18px;
+        height: 52px;
+    }
+}
+
+@media (max-width: 596px) {
+    .confirmation-title {
+        font-size: 21px;
+        padding: 0 10px;
+    }
+
+    .confirmation-subtitle {
+        font-size: 12px;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+
+    .confirmation-btn {
+        max-width: 200px;
+        font-size: 14px;
+        height: 44px;
+    }
+
+    .conf-btn-divider {
+        height: 10px;
+        margin: 0 8px;
+    }
+
+    .confirmation-btn .btn-arrow {
+        width: 16px;
+        height: 16px;
+    }
+}
