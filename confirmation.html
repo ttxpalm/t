@@ -18,6 +18,10 @@
     <meta name="twitter:image" content="https://local-lead-boost-demo.vercel.app/images/HomePage.png" />
 
     <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/manrope/v15/xn7gYHE41ni1AdIRggexSg.woff2" as="font"
+        type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/sora/v13/xMQBuFBTczqEWndwzww.woff2" as="font"
+        type="font/woff2" crossorigin>
     <link rel="preload" href="images/logo.png" as="image" />
 
     <!-- Google Fonts -->
@@ -25,7 +29,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap" />
+    </noscript>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/confirmation.css" />
 </head>
