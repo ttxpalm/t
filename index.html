@@ -17,6 +17,11 @@
     <meta name="twitter:description" content="GET YOUR BUSINESS TO THE TOP OF GOOGLE" />
     <meta name="twitter:image" content="https://local-lead-boost-demo.vercel.app/images/HomePage.png" />
 
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="images/logo.png" as="image" />
+    <link rel="preload" href="images/search_mobile.png" as="image" media="(max-width: 1079px)" />
+    <link rel="preload" href="images/search.png" as="image" media="(min-width: 1080px)" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -744,12 +749,44 @@
                 <h2 class="book-call-main-heading">BOOK YOUR FREE CALL</h2>
 
                 <!-- CALENDAR BLOCK -->
-                <div class="calendly-frame">
+                <div class="calendly-frame" id="calendly-frame">
                     <!-- Calendly inline widget begin -->
                     <div class="calendly-inline-widget" data-url="https://calendly.com/jonny-local-lead-boost"
                         style="min-width:320px;height:700px;width:100%;max-width:1060px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                        async></script>
+                    <script defer>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            let calendlyLoaded = false;
+                            const loadCalendly = () => {
+                                if (calendlyLoaded) return;
+                                calendlyLoaded = true;
+                                const script = document.createElement("script");
+                                script.src = "https://assets.calendly.com/assets/external/widget.js";
+                                script.async = true;
+                                document.body.appendChild(script);
+                            };
+
+                            // Load on interaction or scroll to footer
+                            const observer = new IntersectionObserver((entries) => {
+                                if (entries[0].isIntersecting) {
+                                    loadCalendly();
+                                    observer.disconnect();
+                                }
+                            }, { rootMargin: "600px" });
+
+                            observer.observe(document.getElementById("calendly-frame"));
+
+                            // Load on first interaction as a fallback
+                            const events = ['click', 'scroll', 'touchstart', 'mousemove'];
+                            const loadOnInteract = () => {
+                                loadCalendly();
+                                events.forEach(e => document.removeEventListener(e, loadOnInteract));
+                            };
+                            events.forEach(e => document.addEventListener(e, loadOnInteract, { once: true, passive: true }));
+
+                            // Absolute fallback
+                            setTimeout(loadCalendly, 6000);
+                        });
+                    </script>
                     <!-- Calendly inline widget end -->
                 </div><!-- end calendly-frame -->
 
